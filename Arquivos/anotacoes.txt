@@ -1,0 +1,5 @@
+Topicos abordados:
+- Validacoes de propriedade nos gets e sets
+- Body expression ( sinal de =>)
+- Modificadores de acesso
+- Metodos e Construtores
