@@ -29,9 +29,15 @@ namespace ExemplosExplorando.Models
         public void ListarAlunos()
         {
             Console.WriteLine($"Alunos do curso de: {Nome}");
-            foreach (Pessoa aluno in Alunos)
+            // foreach (Pessoa aluno in Alunos)
+            // {
+            //     Console.WriteLine("Nome: " + aluno.NomeCompleto + ", idade: " + aluno.Idade + ";");
+            // }
+
+            for (int count = 0; count < Alunos.Count; count++)
             {
-                Console.WriteLine("Nome: " + aluno.NomeCompleto + ", idade: " + aluno.Idade + ";");
+                string texto = "N. " + (count + 1) + " " + Alunos[count].NomeCompleto; // quando usa o sinal de + para concatenar string. Tudo aqui sera transformado para string internamente
+                Console.WriteLine(texto);
             }
         }
 

@@ -3,3 +3,5 @@ Topicos abordados:
 - Body expression ( sinal de =>)
 - Modificadores de acesso
 - Metodos e Construtores
+- Concatenacaoe Interpolacao de string e valores
+- Formatacao de valores monetarios e alteracao da localizacao de cultura
