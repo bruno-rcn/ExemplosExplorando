@@ -5,3 +5,6 @@ Topicos abordados:
 - Metodos e Construtores
 - Concatenacaoe Interpolacao de string e valores
 - Formatacao de valores monetarios e alteracao da localizacao de cultura
+- Class que le arquivo
+- Excessoes (try catch)
+- Fila, Pilha, Dictionary
