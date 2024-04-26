@@ -7,4 +7,6 @@ Topicos abordados:
 - Formatacao de valores monetarios e alteracao da localizacao de cultura
 - Class que le arquivo
 - Excessoes (try catch)
-- Fila, Pilha, Dictionary
+- Fila - Colecao - Queue (FIFO - first in first out) primeiro item que entra na fila e o primeiro que sai
+- Pilha -  Colecao - Stack - (LIFO - last in first out) ultimo elemento que foi adicionado sera o primeiro a sair
+- Dictionary - Colecao de chave e valor sem ordem unica

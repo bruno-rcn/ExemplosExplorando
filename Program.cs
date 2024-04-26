@@ -83,24 +83,95 @@
 
 // Ler arquivo e jogar excessao
 // no bloco try catch podemos ter quantos blocos catchs quisermos
-try
-{
-    string[] linhas = File.ReadAllLines("Arquivos/teste.txt"); // se colocar o mouse em cima de ReadAllLine ira apresentar um popup com as excessoes especificas que podem acontecer
-    foreach(string linha in linhas)
-    {
-        Console.WriteLine(linha);
-    }    
-}
-catch (FileNotFoundException ex)
-{
-    Console.WriteLine($"Excessao especifica de arquivo nao encontrado: {ex.Message}");
-}
-catch (Exception ex)
-{
+// try
+// {
+//     string[] linhas = File.ReadAllLines("Arquivos/teste.txt"); // se colocar o mouse em cima de ReadAllLine ira apresentar um popup com as excessoes especificas que podem acontecer
+//     foreach(string linha in linhas)
+//     {
+//         Console.WriteLine(linha);
+//     }    
+// }
+// catch (FileNotFoundException ex)
+// {
+//     Console.WriteLine($"Excessao especifica de arquivo nao encontrado: {ex.Message}");
+// }
+// catch (Exception ex)
+// {
 
-    Console.WriteLine($"Excessao generica: {ex.Message}"); // excessao generica pois pode ocorrer qualquer uma do popup do ReadAllLine
-}
-finally // ele executa sempre que acaba o try catch caindo em qualquer bloco de codigo (tanto no try quanto no catch) muito utilizado para encerrar conexao com banco de dados
+//     Console.WriteLine($"Excessao generica: {ex.Message}"); // excessao generica pois pode ocorrer qualquer uma do popup do ReadAllLine
+// }
+// finally // ele executa sempre que acaba o try catch caindo em qualquer bloco de codigo (tanto no try quanto no catch) muito utilizado para encerrar conexao com banco de dados
+// {
+//     Console.WriteLine("Chegou ate aqui");
+// }
+
+
+// =====================================================================================================================================
+
+
+// Fila
+// Queue<int> fila = new Queue<int>();
+// fila.Enqueue(2);
+// fila.Enqueue(4);
+// fila.Enqueue(6);
+// fila.Enqueue(8);
+
+// foreach (int item in fila)
+// {
+//     Console.WriteLine(item); // vai imprimir na ordem adicionada. 2, 4, 6, 8
+// }
+
+// fila.Dequeue(); // nao passa parametro pq vai adicionar na ordem adicionada. No caso o primeiro vai ser o 2. FIFO
+// Console.WriteLine("Removendo elemento:");
+
+// foreach (int item in fila)
+// {
+//     Console.WriteLine(item); // vai imprimir na ordem adicionada. 2, 4, 6, 8
+// }
+
+// Pilha
+// Stack<int> pilha = new Stack<int>();
+// pilha.Push(3);
+// pilha.Push(6);
+// pilha.Push(9);
+
+// foreach (int item in pilha)
+// {
+//     Console.WriteLine(item); // vai imprimir do ultimo adicionado ao primeiro. 9, 6, 2
+// }
+
+// pilha.Pop(); // ele tambem retorna o elemento removido caso queira imprimir no console
+// Console.WriteLine("Removendo elemento:");
+
+// foreach (int item in pilha)
+// {
+//     Console.WriteLine(item); // vai apagar o ultimo adicionado. 9. pois esta no topo
+// }
+
+// Dictionary
+Dictionary<string, string> estados = new Dictionary<string, string>();
+estados.Add("SP", "sao paulo"); // a chave (lado esquerdo) tem que ser unica se nao ele nao funciona
+estados.Add("RJ", "rio de janeiro"); // o valor (lado direito) pode aparecer mais vezes e pode ser alterado
+estados.Add("SC", "santa catarina");
+
+// pode substituir isso (KeyValuePair<string, string>) pela palavra - var
+foreach (var item in estados)
 {
-    Console.WriteLine("Chegou ate aqui");
+    Console.WriteLine($"Chave: {item.Key}, Valor: {item.Value}");
+}
+
+estados.Remove("RJ"); // para remover item vc passa a chave
+Console.WriteLine("Removendo elemento:");
+
+foreach (var item in estados)
+{
+    Console.WriteLine($"Chave: {item.Key}, Valor: {item.Value}");
+}
+
+estados["SC"] = "british";
+Console.WriteLine("Alterando valor da chave:");
+
+foreach (var item in estados)
+{
+    Console.WriteLine($"Chave: {item.Key}, Valor: {item.Value}");
 }
