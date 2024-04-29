@@ -1,4 +1,6 @@
-﻿using ExemplosExplorando.Models;
+﻿using System.Data.Common;
+using System.Runtime.CompilerServices;
+using ExemplosExplorando.Models;
 
 // Pessoa p1 = new Pessoa();
 // p1.Nome = "Bruno"; // "Bruno" vira o valor de value
@@ -149,29 +151,60 @@
 // }
 
 // Dictionary
-Dictionary<string, string> estados = new Dictionary<string, string>();
-estados.Add("SP", "sao paulo"); // a chave (lado esquerdo) tem que ser unica se nao ele nao funciona
-estados.Add("RJ", "rio de janeiro"); // o valor (lado direito) pode aparecer mais vezes e pode ser alterado
-estados.Add("SC", "santa catarina");
+// Dictionary<string, string> estados = new Dictionary<string, string>();
+// estados.Add("SP", "sao paulo"); // a chave (lado esquerdo) tem que ser unica se nao ele nao funciona
+// estados.Add("RJ", "rio de janeiro"); // o valor (lado direito) pode aparecer mais vezes e pode ser alterado
+// estados.Add("SC", "santa catarina");
 
-// pode substituir isso (KeyValuePair<string, string>) pela palavra - var
-foreach (var item in estados)
+// // pode substituir isso (KeyValuePair<string, string>) pela palavra - var
+// foreach (var item in estados)
+// {
+//     Console.WriteLine($"Chave: {item.Key}, Valor: {item.Value}");
+// }
+
+// estados.Remove("RJ"); // para remover item vc passa a chave
+// Console.WriteLine("Removendo elemento:");
+
+// foreach (var item in estados)
+// {
+//     Console.WriteLine($"Chave: {item.Key}, Valor: {item.Value}");
+// }
+
+// estados["SC"] = "british";
+// Console.WriteLine("Alterando valor da chave:");
+
+// foreach (var item in estados)
+// {
+//     Console.WriteLine($"Chave: {item.Key}, Valor: {item.Value}");
+// }
+
+
+
+// =====================================================================================================================================
+
+
+// Tupla
+
+(int Id, string Nome, string Sobrenome) tupla = (1, "Bruno", "Ricardo"); // outra sintaxe ValueTuple<int, string, string> tuple = (1, "Bruno", "Ricardo"); ou var tuple = Tuple.Create(1, "Bruno", "Ricardo")
+Console.WriteLine("id: " + tupla.Item1);
+Console.WriteLine("Nome: " + tupla.Item2);
+Console.WriteLine("Sobrenome: " + tupla.Item3);
+
+
+LeituraArquivo arquivo = new LeituraArquivo();
+var (sucesso, linhas, qtdLinhas) = arquivo.LerArquivo("Arquivos/teste.txt"); 
+// Para fazer descarte de informacao nao utilizada na tupla se usa o _
+// Ex: Caso nao quisesse utilizar a quantidade de linhas, instaciar como var (sucesso, linhas, _) Assim nao tera problema de legibilidade
+
+if (sucesso)
 {
-    Console.WriteLine($"Chave: {item.Key}, Valor: {item.Value}");
+    Console.WriteLine("Quantidade de linhas do arquivo: " + qtdLinhas);
+    foreach (string item in linhas)
+    {
+        Console.WriteLine(item);
+    }
 }
-
-estados.Remove("RJ"); // para remover item vc passa a chave
-Console.WriteLine("Removendo elemento:");
-
-foreach (var item in estados)
+else
 {
-    Console.WriteLine($"Chave: {item.Key}, Valor: {item.Value}");
-}
-
-estados["SC"] = "british";
-Console.WriteLine("Alterando valor da chave:");
-
-foreach (var item in estados)
-{
-    Console.WriteLine($"Chave: {item.Key}, Valor: {item.Value}");
+    Console.WriteLine("Nao foi possivel ler o arquivo");
 }
