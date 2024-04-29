@@ -185,26 +185,51 @@ using ExemplosExplorando.Models;
 
 // Tupla
 
-(int Id, string Nome, string Sobrenome) tupla = (1, "Bruno", "Ricardo"); // outra sintaxe ValueTuple<int, string, string> tuple = (1, "Bruno", "Ricardo"); ou var tuple = Tuple.Create(1, "Bruno", "Ricardo")
-Console.WriteLine("id: " + tupla.Item1);
-Console.WriteLine("Nome: " + tupla.Item2);
-Console.WriteLine("Sobrenome: " + tupla.Item3);
+// (int Id, string Nome, string Sobrenome) tupla = (1, "Bruno", "Ricardo"); // outra sintaxe ValueTuple<int, string, string> tuple = (1, "Bruno", "Ricardo"); ou var tuple = Tuple.Create(1, "Bruno", "Ricardo")
+// Console.WriteLine("id: " + tupla.Item1);
+// Console.WriteLine("Nome: " + tupla.Item2);
+// Console.WriteLine("Sobrenome: " + tupla.Item3);
 
 
-LeituraArquivo arquivo = new LeituraArquivo();
-var (sucesso, linhas, qtdLinhas) = arquivo.LerArquivo("Arquivos/teste.txt"); 
-// Para fazer descarte de informacao nao utilizada na tupla se usa o _
-// Ex: Caso nao quisesse utilizar a quantidade de linhas, instaciar como var (sucesso, linhas, _) Assim nao tera problema de legibilidade
+// LeituraArquivo arquivo = new LeituraArquivo();
+// var (sucesso, linhas, qtdLinhas) = arquivo.LerArquivo("Arquivos/teste.txt"); 
+// // Para fazer descarte de informacao nao utilizada na tupla se usa o _
+// // Ex: Caso nao quisesse utilizar a quantidade de linhas, instaciar como var (sucesso, linhas, _) Assim nao tera problema de legibilidade
 
-if (sucesso)
-{
-    Console.WriteLine("Quantidade de linhas do arquivo: " + qtdLinhas);
-    foreach (string item in linhas)
-    {
-        Console.WriteLine(item);
-    }
-}
-else
-{
-    Console.WriteLine("Nao foi possivel ler o arquivo");
-}
+// if (sucesso)
+// {
+//     Console.WriteLine("Quantidade de linhas do arquivo: " + qtdLinhas);
+//     foreach (string item in linhas)
+//     {
+//         Console.WriteLine(item);
+//     }
+// }
+// else
+// {
+//     Console.WriteLine("Nao foi possivel ler o arquivo");
+// }
+
+
+// =====================================================================================================================================
+
+
+
+// Desconstrutor
+// Pessoa p1 = new Pessoa("Bruno", "Ricardo", 28);
+// (string nome, string sobrenome, int idade) = p1; // chamando o deconstructor
+// Console.WriteLine(nome + sobrenome);
+
+
+
+// =====================================================================================================================================
+
+
+// IF ternario
+// escrevendo um programa que determina se o numero e par ou impar
+int numero = 15;
+bool ehPar = false;
+
+// if ternario
+ehPar = numero % 2 == 0;
+Console.WriteLine($"O {numero} e par ou impar:");
+Console.WriteLine(ehPar ? "par" : "impar"); // se a consdicao for verdadeira imprimi depois do sinal de ? se for falsa imprimi apos o sinal :

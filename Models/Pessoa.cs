@@ -9,11 +9,18 @@ namespace ExemplosExplorando.Models
     {
 
         public Pessoa() {} // construtor padrao
-        public Pessoa(string nome, string sobrenome, int idade) // utilizado para que na instancia seja adicionado uns valores por obrigacao
+        public Pessoa(string nome, string sobrenome, int idade) // utilizado para que na instancia seja adicionado uns valores por obrigacao. Recebe variavel e adiciona na propriedade
         {
             Nome = nome; // o paramentro [nome] vai ser adicionado na propriedade [Nome] que sera feito a tratativa do valor pelo atributo [_nome]
-            Sobrenome = sobrenome;
+            Sobrenome = sobrenome; 
             Idade = idade;
+        }
+
+        public void Deconstruct(out string nome, out string sobrenome, out int idade) // adiciona a propriedade na variavel
+        {
+            nome = Nome;
+            sobrenome = Sobrenome;
+            idade = Idade;
         }
 
         private string _nome; // vai ser armazenado aqui o valor atribuido na instacia da class e depois sera processado pelo get e set da propriedade e do metodo
