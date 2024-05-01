@@ -24,5 +24,6 @@ namespace ExemplosExplorando.Models
         public string Produto { get; set; }
         public decimal Preco { get; set; }
         public DateTime DataVenda { get; set; }
+        public decimal? Desconto { get; set; } // propriedade que aceita receber valor null
     }
 }

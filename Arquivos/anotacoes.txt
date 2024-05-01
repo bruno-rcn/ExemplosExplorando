@@ -14,3 +14,7 @@ Topicos abordados:
 - Nugget (gerenciador de pacotes) (Nugget == Maven || Npm)
 - Serializacao (transformar um objeto em bytes para armazenamento ou transmissao para outras aplicacoes [como: memoria, banco de dados, arquivo])
 - Deserializacao - inverso
+- Tipos especiais (null || nullable = significa vazio)
+    bool = true or false || bool? = true, false or null
+- Tipos anonimos, Dynamic
+- Classes genericas

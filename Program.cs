@@ -1,6 +1,7 @@
 ﻿using System.Data.Common;
 using System.Runtime.CompilerServices;
 using ExemplosExplorando.Models;
+using Newtonsoft.Json;
 
 // Pessoa p1 = new Pessoa();
 // p1.Nome = "Bruno"; // "Bruno" vira o valor de value
@@ -241,9 +242,9 @@ using ExemplosExplorando.Models;
 
 
 // Serializacao e Deserializacao
-using Newtonsoft.Json;
+// using Newtonsoft.Json;
 
-DateTime dataAtual = DateTime.Now; // Usar DateTime em json - ISO 8601 -  Formato Ano-Mes-Dia T Horas-Minutos-Segundos ...
+// DateTime dataAtual = DateTime.Now; // Usar DateTime em json - ISO 8601 -  Formato Ano-Mes-Dia T Horas-Minutos-Segundos ...
 
 // ----> serializar 1 unico item
 // Venda v1 = new Venda(1, "PS5", 400M, dataAtual); // temos um objeto no codigo que precisa ser enviado para o cliente para que ele possa armazenar
@@ -265,10 +266,61 @@ DateTime dataAtual = DateTime.Now; // Usar DateTime em json - ISO 8601 -  Format
 
 // ----> Deserializar - Aqui vai receber um json e criar um objeto para usar no sistema
 // Para deserializar, precisa criar uma class para ler o arquivo json onde os nomes das propriedades da class tem que ser os mesmos que os das chaves do json
-string conteudoArquivoJson = File.ReadAllText("Arquivos/listVendas.json"); // ler o conteudo do arquivo e armazenar em uma variavel
+// string conteudoArquivoJson = File.ReadAllText("Arquivos/listVendas.json"); // ler o conteudo do arquivo e armazenar em uma variavel
 
-List<Venda> listaVendaDese = JsonConvert.DeserializeObject<List<Venda>>(conteudoArquivoJson);// pegar o arquivo e deserializar para objeto
-foreach (Venda item in listaVendaDese)
-{
-    Console.WriteLine($"Id: {item.Id}, Produto: {item.Produto}, Preco: {item.Preco}, Data: {item.DataVenda}");
-}
+// List<Venda> listaVendaDese = JsonConvert.DeserializeObject<List<Venda>>(conteudoArquivoJson);// pegar o arquivo e deserializar para objeto
+// foreach (Venda item in listaVendaDese)
+// {
+//     Console.WriteLine($"Id: {item.Id}, Produto: {item.Produto}, Preco: {item.Preco}, Data: {item.DataVenda}, Desconto: {item.Desconto}");
+// }
+
+
+
+// =====================================================================================================================================
+
+
+
+// tipos nulos
+// o ? indica que pode aceitar valor null
+// bool? desejaReceberEmail = null;
+// if(desejaReceberEmail.HasValue && desejaReceberEmail.Value)
+// {
+//     Console.WriteLine("Usuario pode receber email");
+// }
+// else
+// {
+//     Console.WriteLine("Usuario nao pode receber email");
+// }
+
+// using Newtonsoft.Json;
+// string conteudoArquivoJson = File.ReadAllText("Arquivos/listVendas.json");
+// List<Venda> listaVendaDese = JsonConvert.DeserializeObject<List<Venda>>(conteudoArquivoJson);// pegar o arquivo e deserializar para objeto
+// foreach (Venda item in listaVendaDese)
+// {
+//     Console.WriteLine($"Id: {item.Id}, Produto: {item.Produto}, Preco: {item.Preco}, Data: {item.DataVenda}, Desconto: {item.Desconto}");
+// }
+
+// Anonimo - tem mais de um tipo associado
+// var tipoAnonimo = new { Nome = "Bruno", Sobrenome = "Camara", Altura = 1.80 }; // funciona quase igual uma tupla
+// Console.WriteLine(tipoAnonimo.Nome);
+// Console.WriteLine(tipoAnonimo.Sobrenome);
+// Console.WriteLine(tipoAnonimo.Altura);
+
+// string conteudoArquivoJson = File.ReadAllText("Arquivos/listVendas.json");
+// List<Venda> listaVendaDese = JsonConvert.DeserializeObject<List<Venda>>(conteudoArquivoJson);
+
+// // [var listaAnonima] para instaciar uma variavel que vai pegar a lista deserializada e criar um tipo anonimo [new { x.Produto, x.Preco }] onde [x] representa um item como no foreach e assim vc consegue selecionar um item especifico
+// var listaAnonima = listaVendaDese.Select(x => new { x.Produto, x.Preco });
+// foreach (var item in listaAnonima) // agora a variavel listaAnonima contem os valores de produto e preco armazenados
+// {
+//     Console.WriteLine(item.Produto);
+//     Console.WriteLine(item.Preco);
+// }
+
+// variavel dinamica
+// Pode ter seu tipo alterado
+dynamic variavelDinamica = 4;
+Console.WriteLine($"1 - Tipo da variavel dinamica: {variavelDinamica.GetType()}");
+
+variavelDinamica = "Texto";
+Console.WriteLine($"2 - Tipo da variavel dinamica: {variavelDinamica.GetType()}");

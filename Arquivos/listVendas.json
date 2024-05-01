@@ -2,7 +2,8 @@
   {
     "Id": 1,
     "Nome_Produto": "PS5",
-    "Preco": 400.0
+    "Preco": 400.0,
+    "Desconto": null
   },
   {
     "Id": 2,
