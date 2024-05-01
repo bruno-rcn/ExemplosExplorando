@@ -11,3 +11,6 @@ Topicos abordados:
 - Pilha -  Colecao - Stack - (LIFO - last in first out) ultimo elemento que foi adicionado sera o primeiro a sair
 - Dictionary - Colecao de chave e valor sem ordem unica
 - Tuplas, Desconstrutor, If ternario
+- Nugget (gerenciador de pacotes) (Nugget == Maven || Npm)
+- Serializacao (transformar um objeto em bytes para armazenamento ou transmissao para outras aplicacoes [como: memoria, banco de dados, arquivo])
+- Deserializacao - inverso

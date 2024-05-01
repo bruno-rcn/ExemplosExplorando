@@ -1,0 +1,17 @@
+[
+  {
+    "Id": 1,
+    "Nome_Produto": "PS5",
+    "Preco": 400.0
+  },
+  {
+    "Id": 2,
+    "Produto": "XBOX X",
+    "Preco": 300.0
+  },
+  {
+    "Id": 3,
+    "Produto": "Switch",
+    "Preco": 350.0
+  }
+]

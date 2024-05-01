@@ -226,10 +226,49 @@ using ExemplosExplorando.Models;
 
 // IF ternario
 // escrevendo um programa que determina se o numero e par ou impar
-int numero = 15;
-bool ehPar = false;
+// int numero = 15;
+// bool ehPar = false;
 
-// if ternario
-ehPar = numero % 2 == 0;
-Console.WriteLine($"O {numero} e par ou impar:");
-Console.WriteLine(ehPar ? "par" : "impar"); // se a consdicao for verdadeira imprimi depois do sinal de ? se for falsa imprimi apos o sinal :
+// // if ternario
+// ehPar = numero % 2 == 0;
+// Console.WriteLine($"O {numero} e par ou impar:");
+// Console.WriteLine(ehPar ? "par" : "impar"); // se a consdicao for verdadeira imprimi depois do sinal de ? se for falsa imprimi apos o sinal :
+
+
+
+// =====================================================================================================================================
+
+
+
+// Serializacao e Deserializacao
+using Newtonsoft.Json;
+
+DateTime dataAtual = DateTime.Now; // Usar DateTime em json - ISO 8601 -  Formato Ano-Mes-Dia T Horas-Minutos-Segundos ...
+
+// ----> serializar 1 unico item
+// Venda v1 = new Venda(1, "PS5", 400M, dataAtual); // temos um objeto no codigo que precisa ser enviado para o cliente para que ele possa armazenar
+// string seria = JsonConvert.SerializeObject(v1, Formatting.Indented); // vai serializar o objeto em uma string json
+// File.WriteAllText("Arquivos/vendas.json", seria); // apos serializar, sera criado um arquivo (vendas.json) no formato para exportar para o cliente usar em outra aplicacao ou banco de dados
+// Console.WriteLine(seria);
+
+// // serializar 1 lista de objetos
+// Venda v2 = new Venda(2, "XBOX X", 300M, dataAtual);
+// Venda v3 = new Venda(3, "Switch", 350M, dataAtual);
+// List<Venda> listaDeVendas = new List<Venda>();
+// listaDeVendas.Add(v1);
+// listaDeVendas.Add(v2);
+// listaDeVendas.Add(v3);
+// string serializarLista = JsonConvert.SerializeObject(listaDeVendas, Formatting.Indented);
+// File.WriteAllText("Arquivos/listVendas.json", serializarLista);
+// Console.WriteLine(serializarLista);
+
+
+// ----> Deserializar - Aqui vai receber um json e criar um objeto para usar no sistema
+// Para deserializar, precisa criar uma class para ler o arquivo json onde os nomes das propriedades da class tem que ser os mesmos que os das chaves do json
+string conteudoArquivoJson = File.ReadAllText("Arquivos/listVendas.json"); // ler o conteudo do arquivo e armazenar em uma variavel
+
+List<Venda> listaVendaDese = JsonConvert.DeserializeObject<List<Venda>>(conteudoArquivoJson);// pegar o arquivo e deserializar para objeto
+foreach (Venda item in listaVendaDese)
+{
+    Console.WriteLine($"Id: {item.Id}, Produto: {item.Produto}, Preco: {item.Preco}, Data: {item.DataVenda}");
+}
