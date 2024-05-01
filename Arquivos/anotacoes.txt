@@ -18,3 +18,4 @@ Topicos abordados:
     bool = true or false || bool? = true, false or null
 - Tipos anonimos, Dynamic
 - Classes genericas
+- Metodosde extensao

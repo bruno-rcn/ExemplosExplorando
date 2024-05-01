@@ -319,8 +319,33 @@ using Newtonsoft.Json;
 
 // variavel dinamica
 // Pode ter seu tipo alterado
-dynamic variavelDinamica = 4;
-Console.WriteLine($"1 - Tipo da variavel dinamica: {variavelDinamica.GetType()}");
+// dynamic variavelDinamica = 4;
+// Console.WriteLine($"1 - Tipo da variavel dinamica: {variavelDinamica.GetType()}");
 
-variavelDinamica = "Texto";
-Console.WriteLine($"2 - Tipo da variavel dinamica: {variavelDinamica.GetType()}");
+// variavelDinamica = "Texto";
+// Console.WriteLine($"2 - Tipo da variavel dinamica: {variavelDinamica.GetType()}");
+
+
+
+// =====================================================================================================================================
+
+
+
+// Classes genericas
+//agora pode ser escolhido o tipo da classe
+// MeuArray<int> arrayInteiro = new MeuArray<int>();
+// arrayInteiro.AdicionarElementoArray(30);
+// Console.WriteLine(arrayInteiro[0]);
+
+// MeuArray<string> arrayTexto = new MeuArray<string>();
+// arrayTexto.AdicionarElementoArray("Texto");
+// Console.WriteLine(arrayTexto[0]);
+
+// metodo de extensao
+int numero = 15;
+bool ehPar;
+
+// if ternario
+ehPar = numero.EhPar(); // adicionando o metodo static
+Console.WriteLine($"O {numero} e par ou impar:");
+Console.WriteLine(ehPar ? "par" : "impar"); // se a consdicao for verdadeira imprimi depois do sinal de ? se for falsa imprimi apos o sinal :
