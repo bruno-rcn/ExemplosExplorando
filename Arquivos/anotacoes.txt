@@ -19,3 +19,17 @@ Topicos abordados:
 - Tipos anonimos, Dynamic
 - Classes genericas
 - Metodosde extensao
+- Tipos de memorias 
+    Stack (Pilha - LIFO - deleta primeiro o que entrou por ultimo) - Armezenamento simples - Declaracao de variavel, Referencia a objetos (o objt fica no heap) 
+    Heap (Delete na sequencia que usa, nao possui ordem de armazenamento ou de remocao) - Armezane mais complexos - Objetos, Classes
+    GC (garbage collector) - limpeza de memoria Heap - exclui todo objeto da Hep que nao tem referencia na Stack (e excluir variaveis na Stack tbm)
+
+    Tipo valor: Variavel que contem o valor que representa a variavel (memoria stack)
+        Ex: int n = 5; (tipo valor - value type)
+    Tipo referencia: Contem a instancia de um objeto, sendo a referencia
+        referencia de um obj na memoria Stack. Ex: (Class)Objeto Pessoa[Memoria heap] - instancia new Pessoa p1[p1 esta na Stack] p1 - reference type
+        Obs: Nesse caso, se tiver 2 instancias como p1 e p2 e colocar[p2 = p1] significa que os 2 apontam para o mesmo objeto, ou seja, se trocar algo de p1, altera em p2 e vice e versa
+
+
+
+
