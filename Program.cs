@@ -341,11 +341,130 @@ using Newtonsoft.Json;
 // arrayTexto.AdicionarElementoArray("Texto");
 // Console.WriteLine(arrayTexto[0]);
 
-// metodo de extensao
-int numero = 15;
-bool ehPar;
+// // metodo de extensao
+// int numero = 15;
+// bool ehPar;
 
-// if ternario
-ehPar = numero.EhPar(); // adicionando o metodo static
-Console.WriteLine($"O {numero} e par ou impar:");
-Console.WriteLine(ehPar ? "par" : "impar"); // se a consdicao for verdadeira imprimi depois do sinal de ? se for falsa imprimi apos o sinal :
+// // if ternario
+// ehPar = numero.EhPar(); // adicionando o metodo static
+// Console.WriteLine($"O {numero} e par ou impar:");
+// Console.WriteLine(ehPar ? "par" : "impar"); // se a consdicao for verdadeira imprimi depois do sinal de ? se for falsa imprimi apos o sinal :
+
+
+
+// =====================================================================================================================================
+
+
+// Desafio de codigo 1
+// var dias = int.Parse(Console.ReadLine());
+// var anos = dias / 365;
+// dias %= 365;
+// var meses = dias / 30;
+// dias %= 30;
+
+// Console.WriteLine($"{anos} ano(s)");
+// Console.WriteLine($"{meses} mes(es)");
+// Console.WriteLine($"{dias} dia(s)");
+
+// Desafio de codigo 2
+// var timeInSeconds = int.Parse(Console.ReadLine());
+// //TODO: Implementar a formula para calcular as horas.
+// var hours = timeInSeconds / 3600;
+// timeInSeconds %= 3600;
+// //TODO: Implementar a formula para calcular as horas.
+// var minutes = timeInSeconds / 60;
+// var seconds = timeInSeconds % 60;
+
+// Console.WriteLine($"{hours}:{minutes}:{seconds}");
+
+
+// Desafio de codigo 3
+// string[] line1 = Console.ReadLine().Split(" ");
+// string[] line2 = Console.ReadLine().Split(" ");
+
+// int finalExpediente = int.Parse(line1[0]);
+
+// int presente1 = int.Parse(line2[0]);
+// int presente2 = int.Parse(line2[1]);
+
+// int totalNecessario = presente1 + presente2;
+
+// if (totalNecessario <= finalExpediente) {
+//     Console.WriteLine("Farei hoje!");
+// } else {
+//     Console.WriteLine("Deixa para amanha!");
+// }
+
+
+// Desafio de codigo 4
+// static int CalcularDano(int ataque, int defesa) {
+//     int dano = ataque - defesa;
+//     return dano > 0 ? dano : 0; // Se o dano for negativo, retorna 0
+// }
+
+// int ataque = int.Parse(Console.ReadLine());
+// int defesa = int.Parse(Console.ReadLine());
+
+// int danoCausado = CalcularDano(ataque, defesa);
+// Console.WriteLine("O dano causado pelo ataque foi: " + danoCausado);
+
+
+// Desafio de codigo 5
+// static bool VerificarAtributo(string atributo, int valorMinimo, int valorMaximo, int valorAtributo)
+// {
+//     return valorAtributo >= valorMinimo && valorAtributo <= valorMaximo;
+// }
+
+// string atributo = Console.ReadLine();
+
+// int valorMinimo = int.Parse(Console.ReadLine());
+
+// int valorMaximo = int.Parse(Console.ReadLine());
+
+// int valorAtributo = int.Parse(Console.ReadLine());
+
+// bool dentroDoIntervalo = VerificarAtributo(atributo, valorMinimo, valorMaximo, valorAtributo);
+
+// if (dentroDoIntervalo)
+// {
+//     Console.WriteLine("O valor do atributo está dentro do intervalo especificado");
+// }
+// else
+// {
+//     Console.WriteLine("O valor do atributo está fora do intervalo especificado");
+// }
+
+
+// Desafio de codigo 6
+// static string VerificarForcaSenha(string senha)
+// {
+//     int comprimentoMinimo = 8;
+//     bool temLetraMaiuscula = false;
+//     bool temLetraMinuscula = false;
+//     bool temNumero = false;
+//     bool temCaractereEspecial = false;
+
+//     // Verificando o comprimento da senha
+//     if (senha.Length < comprimentoMinimo)
+//         return "Sua senha e muito curta. Recomenda-se no minimo 8 caracteres.";
+
+//     // Verificando se a senha contém letras maiúsculas e minúsculas
+//     temLetraMaiuscula = senha.Any(char.IsUpper);
+//     temLetraMinuscula = senha.Any(char.IsLower);
+
+//     // Verificando se a senha contém números e caracteres especiais
+//     temNumero = senha.Any(char.IsDigit);
+//     temCaractereEspecial = senha.Any(c => !char.IsLetterOrDigit(c));
+
+//     // Verificando se a senha atende a todos os critérios
+//     if (temLetraMinuscula && temLetraMaiuscula && temNumero && temCaractereEspecial)
+//         return "Sua senha atende aos requisitos de seguranca. Parabens!";
+//     else
+//         return "Sua senha nao atende aos requisitos de seguranca.";
+// }
+
+// string senha = Console.ReadLine().Trim();
+
+// string resultado = VerificarForcaSenha(senha);
+
+// Console.WriteLine(resultado);
